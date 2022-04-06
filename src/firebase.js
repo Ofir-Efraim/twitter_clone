@@ -1,4 +1,6 @@
-import firebase from 'firebase'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 const firebaseConfig = {
     apiKey: "AIzaSyDec07TKSTiwUh60BomGX7jq1gVxlw8dtE",
     authDomain: "twitter-clone-b8a9e.firebaseapp.com",
@@ -9,8 +11,9 @@ const firebaseConfig = {
     measurementId: "G-FD1QRZHYDS"
   };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
+  // Use these for db & auth
+  const db = firebaseApp.firestore();
   
-export default db;
+  export default db ;
