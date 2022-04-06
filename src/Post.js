@@ -7,7 +7,7 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
 
-const Post = ({displayName, username, verified, timestamp, text, image, avatar}) => {
+const Post = ({displayName, username, verified, timestamp, text, image}) => {
   return (
     <div className='post'>
         <div className="post_avatar">
@@ -17,17 +17,17 @@ const Post = ({displayName, username, verified, timestamp, text, image, avatar})
             <div className="post_header">
                 <div className="post_headerText">
                     <h3>
-                        Ofir Efraim 
+                        {displayName} 
                         <span className='post_headerSpecial'>
-                            <VerifiedUserIcon className="post_badge"/>
-                            @ofirefraim
+                           {verified && <VerifiedUserIcon className="post_badge"/>}
+                            @{username}
                         </span>
                     </h3>
                 </div>
                 <div className="post_headerDescription">
-                    <p>I challange you</p>
+                    <p>{text}</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="a pictur" />
+                <img src={image} alt="a pictur" />
                 <div className="post_footer">
                 <ChatBubbleOutlineIcon fontSize="small" />
                 <RepeatIcon fontSize="small" />
